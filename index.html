@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>吾爱音乐网</title>
+	<link rel="stylesheet" href="mydemo2.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	  <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+     <style> body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container {
+        width: 800px;
+        height: 400px;
+        margin: 20px auto;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    </style>
+    <script type="text/javascript">
+/* 鼠标特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("❤富强❤","❤民主❤","❤文明❤","❤和谐❤","❤自由❤","❤平等❤","❤公正❤","❤法制❤","❤爱国❤","❤敬业❤","❤诚信❤","❤友善❤");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+
+<!-- 右下角live2d效果 -->
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+
+<script>
+    L2Dwidget.init({
+        "model": {
+            jsonPath: "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
+            "scale": 1
+        },
+        "display": {
+            "position": "right",
+            "width": 120,
+            "height": 240,
+            "hOffset": 0,
+            "vOffset": -90
+        },
+        "mobile": {
+            "show": true,
+            "scale": 0.5
+        },
+        "react": {
+            "opacityDefault": 0.8,
+            "opacityOnHover": 0.2
+        }
+    });
+</script>
+
+<!--
+其他可选的模型：
+黑猫：https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json
+萌娘：https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json
+白猫：https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json
+狗狗：https://unpkg.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json
+小可爱：https://unpkg.com/live2d-widget-model-z16@1.0.5/assets/z16.model.json
+小可爱：https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json
+-->
+</head>
+<body style="padding:5% 5% 5% 5%;background-image:url(./images/beijing.png);background-size:100% 100%;background-repeat:no-repeat;background-attachment: fixed;">
+
+
+
+<!--logo层-->	
+     <div class="logo">
+     	<div class="imgbox" >
+        <img src="images/logo.png" width="100%" height="100%">
+     	</div>
+        <div class="imgbox">
+        <img src="images/logo1.png" width="100%" height="100%">
+        </div>
+        <div class="imgbox">
+        <img src="images/logo2.png" width="100%" height="100%">
+        </div>
+        <div class="imgbox">
+        <img src="images/logo3.png" width="100%" height="100%">
+        </div>
+
+     </div>
+<!--nav层-->
+<div class="nav">
+	<ul>
+		<li><a href="">发现音乐</a></li>
+		<li><a href="">我的音乐</a></li>
+		<li><a href="">排行榜</a></li>
+		<li><a href="./mv.html" target="_blank">MV</a></li>
+		<li><a href="">VIP会员</a></li>
+	</ul>
+</div>
+<!--banner层-->
+<div class="banner">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/gd-01.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/gd-02.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/gd-03.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/gd-04.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/gd-05.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/gd-06.jpg" alt=""></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</div>
+ <!-- Swiper JS -->
+    <script src="js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false
+    });
+    </script>
+
+<!--图文信息层-->
+<div class="content">
+<ul>
+	<li><a href="http://tyst.migu.cn/public%2Fproduct8th%2Fproduct38%2F2020%2F03%2F2318%2F2020%E5%B9%B403%E6%9C%8809%E6%97%A515%E7%82%B
+934%E5%88%86%E7%B4%A7%E6%80%A5%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E5%90%AF%E9%9F%B5%E6%96%87%E5%8C%963%E9%A6%96%2F%E5%85 %A8%E6%9B%B2%E8%AF%95%E5%90%AC%2FMp3_64_22_16%2F63879705627183934.mp3" target="_blank"><img src="images/少年-01.jpg" alt=""><br>
+	少年<br><span>梦然</span></a></li>
+	<li><a href="http://tyst.migu.cn/public%2Fproduct5th%2Fproduct35%2F2019%2F10%2F2600%2F2019%E5%B9%B410%E6%9C%8821%E6%97%A511%E7%82%B926%E5%88%86%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E6%80%A1%E5%92%8C%E5%85%83%E7%B4%A01%E9%A6%96%2F%E5%85%A8%E6%9B%B2%E8%AF%95%E5%90%AC%2FMp3_64_22_16%2F63365301768.mp3" target="_blank"><img src="images/一个人挺好-02.jpg" alt=""><br>
+	一个人挺好<br><span>杨小壮</span></a></li>
+	<li><a href="http://tyst.migu.cn/public%2Fproduct8th%2Fproduct39%2F2020%2F04%2F1713%2F2020%E5%B9%B404%E6%9C%8811%E6%97%A500%E7%82%B922%E5%88%86%E7%B4%A7%E6%80%A5%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E5%92%AA%E5%92%95%E9%9F%B3%E4%B9%90%E8%87%AA%E6%9C%89%E7%89%88%E6%9D%834214%E9%A6%96%2F%E5%85%A8%E6%9B%B2%E8%AF%95%E5%90%AC%2FMp3_64_22_16%2F69905303689134730.mp3" target="_blank"><img src="images/你的答案-03.jpg" alt=""><br>
+	你的答案<br><span>张韶涵/尤长靖</span></a></li>
+	<li><a href="http://tyst.migu.cn/public%2Fproduct5th%2Fproduct35%2F2019%2F10%2F1618%2F2009%E5%B9%B406%E6%9C%8826%E6%97%A5%E5%8D%9A%E5%B0%94%E6%99%AE%E6%96%AF%2F%E5%85%A8%E6%9B%B2%E8%AF%95%E5%90%AC%2FMp3_64_22_16%2F60054701934.mp3" target="_blank"><img src="images/七里香-04.jpg" alt=""><br>
+	七里香<br><span>周杰伦</span></a></li>
+	<li><a href="http://tyst.migu.cn/public%2Fproduct5th%2Fproduct35%2F2019%2F11%2F2518%2F2019%E5%B9%B411%E6%9C%8825%E6%97%A517%E7%82%B913%E5%88%86%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E4%BC%97%E7%AB%8B%E6%96%87%E5%8C%962%E9%A6%96%2F%E5%85%A8%E6%9B%B2%E8%AF%95%E5%90%AC%2FMp3_64_22_16%2F63299100617.mp3" target="_blank"><img src="images/桥边姑娘-05.jpg" alt=""><br>
+	桥边姑娘<br><span>海伦</span></a></li>
+	<li><a href="http://tyst.migu.cn/public%2Fproduct4th%2Fproduct36%2F2019%2F09%2F0522%2F2019%E5%B9%B401%E6%9C%8816%E6%97%A515%E7%82%B919%E5%88%86%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E7%BB%BF%E8%89%B2%E5%85%84%E5%BC%9F2%E9%A6%96%2F%E5%85%A8%E6%9B%B2%E8%AF%95%E5%90%AC%2FMp3_64_22_16%2F63372200381.mp3" target="_blank"><img src="images/起风了-06.jpg" alt=""><br>
+	起风了<br><span>买辣椒也用券</span></a></li>
+	<li><a href="http://tyst.migu.cn/public%2Fproduct5th%2Fproduct33%2F2019%2F05%2F2317%2F2019%E5%B9%B404%E6%9C%8809%E6%97%A513%E7%82%B938%E5%88%86%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E6%88%90%E9%83%BD%E4%BA%91%E4%B9%8B%E7%91%B61%E9%A6%96%2F%E5%85%A8%E6%9B%B2%E8%AF%95%E5%90%AC%2FMp3_64_22_16%2F63364900301.mp3" target="_blank"><img src="images/多想在平庸的生活拥抱你-07.jpg" alt=""><br>
+	多想在平庸的生活拥抱你<br><span>隔壁老樊</span></a></li>
+	<li><a href="http://tyst.migu.cn/public%2Fproduct5th%2Fproduct34%2F2019%2F06%2F2418%2F2015%E5%B9%B411%E6%9C%8804%E6%97%A514%E7%82%B917%E5%88%86%E7%B4%A7%E6%80%A5%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E7%88%B1%E7%A8%BB%E8%8D%891%E9%A6%96%2F%E5%85%A8%E6%9B%B2%E8%AF%95%E5%90%AC%2FMp3_64_22_16%2F63273401497.mp3" target="_blank"><img src="images/来自天堂的魔鬼-08.jpg" alt=""><br>
+	来自天堂的魔鬼<br><span>G.E.M.邓紫棋</span></a></li>
+</ul>
+</div>
+
+
+<!--结束显示-->
+<div align="center" >
+    <img src="images/top.gif" >
+</div>
+<!--底部显示-->
+
+<div align="center" >
+	<p>Copyright © 2020 不会修电脑</p>
+	<p>邮箱：bhxdn@qq.com</p></div>
+</div>
+<!--返回顶部-->
+	
+</body>
+</html>
